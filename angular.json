@@ -109,7 +109,7 @@
       "prefix": "td",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-text-diff/tsconfig.lib.json",
             "project": "projects/ngx-text-diff/ng-package.json"
@@ -119,7 +119,7 @@
               "tsConfig": "projects/ngx-text-diff/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -130,5 +130,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

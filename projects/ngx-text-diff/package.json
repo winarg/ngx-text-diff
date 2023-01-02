@@ -23,10 +23,10 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": ">=6.0.0",
-    "@angular/core": "^>=6.0.0",
-    "@angular/forms": "^>=6.0.0",
-    "@angular/cdk": "^>=6.0.0",
-    "rxjs": "~6.3.3"
+    "@angular/common": ">=14.0.0",
+    "@angular/core": "^>=14.0.0",
+    "@angular/forms": "^>=14.0.0",
+    "@angular/cdk": "^>=14.0.0",
+    "rxjs": "~7.5.3"
   }
 }

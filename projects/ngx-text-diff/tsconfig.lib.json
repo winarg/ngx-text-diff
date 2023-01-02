@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
+    "target": "ES2020",
+    "module": "ES2020",
     "moduleResolution": "node",
     "declaration": true,
     "sourceMap": true,
@@ -13,7 +13,7 @@
     "types": [],
     "lib": [
       "dom",
-      "es2015"
+      "ES2020"
     ]
   },
   "angularCompilerOptions": {
