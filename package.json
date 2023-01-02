@@ -15,7 +15,8 @@
     "copy-readme": "copyfiles ./projects/ngx-text-diff/README.md ./dist/ngx-text-diff",
     "copy-files": "npm run copy-license && npm run copy-readme",
     "npm_pack": "cd dist/ngx-text-diff && npm pack",
-    "package": "npm run build_lib && npm run copy-files && npm run npm_pack"
+    "package": "npm run build_lib && npm run copy-files && npm run npm_pack",
+    "pack": "ng-packagr -p projects/ngx-text-diff/ng-package.json & cd dist/ngx-text-diff & npm publish --access=public"
   },
   "engines": {
     "node": "16.0.0",
