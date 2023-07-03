@@ -2,14 +2,14 @@
 - A simple text diff `component` to be used with Angular and based on `google diff match patch` library.
 
 ## Dependencies
- - diff-match-patch : ^1.0.4
+ - diff-match-patch : ^1.0.5
 
 ## Required Packages
 These packages will not be auto-installed and must be installed in addition to this library.
- - @angular/common >= 14.0.0
- - @angular/core >= 14.0.0
- - @angular/forms >= 14.0.0
- - @angular/cdk >= 14.0.0 (used for scrolling synchronization)
+ - @angular/common >= 16.0.0
+ - @angular/core >= 16.0.0
+ - @angular/forms >= 16.0.0
+ - @angular/cdk >= 16.0.0 (used for scrolling synchronization)
 
 ## Demo
 [Ngx Text Diff Demo](https://github.com/winarg/ngx-text-diff)
