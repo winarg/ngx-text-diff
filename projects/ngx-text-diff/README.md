@@ -12,10 +12,10 @@ These packages will not be auto-installed and must be installed in addition to t
  - @angular/cdk >= 16.0.0 (used for scrolling synchronization)
 
 ## Demo
-[Ngx Text Diff Demo](https://github.com/winarg/ngx-text-diff)
+[Ngx Text Diff Demo](https://github.com/miccou/ngx-text-diff)
 
 ## Installation
-`npm i @winarg/ngx-text-diff`
+`npm i @miccou/ngx-text-diff`
 
 ## API
 `module: NgxTextDiffModule`  
