@@ -1,6 +1,6 @@
 {
   "name": "@miccou/ngx-text-diff",
-  "version": "17.0.0-next.2",
+  "version": "17.0.0",
   "description": "A Text Diff component for Angular.",
   "keywords": [
     "Angular",
