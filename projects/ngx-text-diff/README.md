@@ -6,10 +6,10 @@
 
 ## Required Packages
 These packages will not be auto-installed and must be installed in addition to this library.
- - @angular/common >= 16.0.0
- - @angular/core >= 16.0.0
- - @angular/forms >= 16.0.0
- - @angular/cdk >= 16.0.0 (used for scrolling synchronization)
+ - @angular/common >= 17.0.0
+ - @angular/core >= 17.0.0
+ - @angular/forms >= 17.0.0
+ - @angular/cdk >= 17.0.0 (used for scrolling synchronization)
 
 ## Demo
 [Ngx Text Diff Demo](https://github.com/winarg/ngx-text-diff)
