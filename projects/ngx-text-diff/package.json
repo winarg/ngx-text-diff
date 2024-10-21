@@ -1,6 +1,6 @@
 {
   "name": "@winarg/ngx-text-diff",
-  "version": "18.0.0",
+  "version": "18.0.2",
   "description": "A Text Diff component for Angular.",
   "keywords": [
     "Angular",
