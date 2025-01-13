@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'formatLine'
+    name: 'formatLine',
+    standalone: false
 })
 export class FormatLinePipe implements PipeTransform {
   transform(line: string, diffs?: string[]): string {

@@ -7,7 +7,7 @@ import { isEmpty, isNil } from './ngx-text-diff.utils';
   providedIn: 'root'
 })
 export class NgxTextDiffService {
-  diffParser: diff_match_patch;
+  diffParser: any; // diff_match_patch;
 
   constructor() {
     this.initParser();

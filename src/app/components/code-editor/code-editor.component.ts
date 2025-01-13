@@ -26,18 +26,19 @@ function normalizeLineEndings(str: string) {
 declare var require: any;
 
 @Component({
-  selector: 'tda-code-editor',
-  templateUrl: './code-editor.component.html',
-  styleUrls: ['./code-editor.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CodeEditorComponent),
-      multi: true,
-    },
-  ],
-  preserveWhitespaces: false,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'tda-code-editor',
+    templateUrl: './code-editor.component.html',
+    styleUrls: ['./code-editor.component.css'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => CodeEditorComponent),
+            multi: true,
+        },
+    ],
+    preserveWhitespaces: false,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CodeEditorComponent implements AfterViewInit, OnDestroy, ControlValueAccessor {
   /* class applied to the created textarea */

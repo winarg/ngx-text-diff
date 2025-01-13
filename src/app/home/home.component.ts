@@ -8,9 +8,10 @@ export interface DiffContent {
 }
 
 @Component({
-  selector: 'tda-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'tda-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css'],
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   submitted = false;

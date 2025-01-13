@@ -1,7 +1,8 @@
 import { Directive, Input, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[tdContainer]',
+    selector: '[tdContainer]',
+    standalone: false
 })
 export class ContainerDirective {
   @Input() id: string;

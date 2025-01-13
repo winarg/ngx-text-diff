@@ -17,9 +17,10 @@ import { ContainerDirective } from './ngx-text-diff-container.directive';
 import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/scrolling';
 
 @Component({
-  selector: 'td-ngx-text-diff',
-  templateUrl: './ngx-text-diff.component.html',
-  styleUrls: ['./ngx-text-diff.component.css'],
+    selector: 'td-ngx-text-diff',
+    templateUrl: './ngx-text-diff.component.html',
+    styleUrls: ['./ngx-text-diff.component.css'],
+    standalone: false
 })
 export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
   private _hideMatchingLines = false;
