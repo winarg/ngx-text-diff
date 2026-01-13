@@ -6,10 +6,10 @@
 
 ## Required Packages
 These packages will not be auto-installed and must be installed in addition to this library.
- - @angular/common >= 18.0.0
- - @angular/core >= 18.0.0
- - @angular/forms >= 18.0.0
- - @angular/cdk >= 18.0.0 (used for scrolling synchronization)
+ - @angular/common >= 20.0.0
+ - @angular/core >= 20.0.0
+ - @angular/forms >= 20.0.0
+ - @angular/cdk >= 20.0.0 (used for scrolling synchronization)
 
 ## Demo
 [Ngx Text Diff Demo](https://github.com/winarg/ngx-text-diff)
@@ -87,7 +87,7 @@ export class AppModule {}
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
-import { DiffContent, DiffResults } from 'ngx-text-diff/lib/ngx-text-diff.model';
+import { DiffContent, DiffResults } from '@winarg/ngx-text-diff/lib/ngx-text-diff.model';
 
 @Component({
   selector: 'app-home',

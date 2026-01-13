@@ -1,6 +1,6 @@
 {
   "name": "@winarg/ngx-text-diff",
-  "version": "19.0.1",
+  "version": "20.0.0",
   "description": "A Text Diff component for Angular.",
   "keywords": [
     "Angular",
@@ -26,10 +26,10 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": ">= 18",
-    "@angular/core": ">= 18",
-    "@angular/forms": ">= 18",
-    "@angular/cdk": ">= 18",
+    "@angular/common": ">= 20",
+    "@angular/core": ">= 20",
+    "@angular/forms": ">= 20",
+    "@angular/cdk": ">= 20",
     "rxjs": "~7.8.1"
   }
 }

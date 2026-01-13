@@ -75,7 +75,7 @@ describe('NgxTextDiffService', () => {
     }));
 
   it('should be created', () => {
-    const service: NgxTextDiffService = TestBed.get(NgxTextDiffService);
+    const service: NgxTextDiffService = TestBed.inject(NgxTextDiffService);
     expect(service).toBeTruthy();
   });
 
