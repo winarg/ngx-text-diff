@@ -9,11 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "types": [],
-    "lib": [
-      "dom",
-      "ES2020"
-    ]
+    "types": []
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
