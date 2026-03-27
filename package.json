@@ -6,7 +6,6 @@
     "start": "ng serve --open",
     "build": "ng build --configuration production",
     "build_report": "ng build --configuration production --stats-json",
-    "test": "echo 1",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build_lib": "ng build ngx-text-diff --configuration production",
