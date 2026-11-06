@@ -26,11 +26,11 @@ import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/scrolling';
 })
 export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
   private _hideMatchingLines = false;
-  @ViewChildren(ContainerDirective) containers: QueryList<ContainerDirective>;
+  @ViewChildren(ContainerDirective) containers!: QueryList<ContainerDirective>;
   @Input() format: DiffTableFormat = 'SideBySide';
   @Input() left = '';
   @Input() right = '';
-  @Input() diffContent: Observable<DiffContent>;
+  @Input() diffContent?: Observable<DiffContent>;
   @Input() loading = false;
   @Input() showToolbar = true;
   @Input() showBtnToolbar = true;
@@ -42,11 +42,11 @@ export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
   set hideMatchingLines(hide: boolean) {
     this.hideMatchingLinesChanged(hide);
   }
-  @Input() outerContainerClass: string;
+  @Input() outerContainerClass?: string;
   @Input() outerContainerStyle: any;
-  @Input() toolbarClass: string;
+  @Input() toolbarClass?: string;
   @Input() toolbarStyle: any;
-  @Input() compareRowsClass: string;
+  @Input() compareRowsClass?: string;
   @Input() compareRowsStyle: any;
   @Input() synchronizeScrolling = true;
   @Output() compareResults = new EventEmitter<DiffResults>();
@@ -163,7 +163,7 @@ export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
         }
 
         return tableLineByLine;
-      }, []);
+      }, [] as DiffTableRowResult[]);
       this.diffsCount = this.tableRows.filter(row => row.hasDiffs).length;
       this.filteredTableRows = this.tableRows;
       this.filteredTableRowsLineByLine = this.tableRowsLineByLine;
@@ -189,20 +189,20 @@ export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
     this.compareResults.next(diffResults);
   }
 
-  trackTableRows(index, row: DiffTableRowResult) {
+  trackTableRows(index: number, row: DiffTableRowResult) {
     return row && row.leftContent ? row.leftContent.lineContent : row && row.rightContent ? row.rightContent.lineContent : undefined;
   }
 
-  trackDiffs(index, diff: DiffPart) {
+  trackDiffs(index: number, diff: DiffPart) {
     return diff && diff.content ? diff.content : undefined;
   }
 
   private initScrollListener() {
     this.subscriptions.push(
-      this.scrollService.scrolled().subscribe((scrollableEv: CdkScrollable) => {
-        if (scrollableEv && this.synchronizeScrolling) {
+      this.scrollService.scrolled().subscribe(scrollableEv => {
+        if (scrollableEv instanceof CdkScrollable && this.synchronizeScrolling) {
           const scrollableId = scrollableEv.getElementRef().nativeElement.id;
-          const nonScrolledContainer: ContainerDirective = this.containers.find(container => container.id !== scrollableId);
+          const nonScrolledContainer = this.containers.find(container => container.id !== scrollableId);
           if (nonScrolledContainer) {
             nonScrolledContainer.element.scrollTo({
               top: scrollableEv.measureScrollOffset('top'),
