@@ -14,7 +14,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Editor, EditorChangeLinkedList, EditorConfiguration, EditorFromTextArea, ScrollInfo } from 'codemirror';
+import { Editor, EditorChange, EditorConfiguration, EditorFromTextArea, ScrollInfo } from 'codemirror';
 
 function normalizeLineEndings(str: string) {
   if (!str) {
@@ -89,7 +89,7 @@ export class CodeEditorComponent implements AfterViewInit, OnDestroy, ControlVal
       this.codeMirror.on('scroll', this.scrollChanged.bind(this));
       this.codeMirror.on('blur', () => this._ngZone.run(() => this.focusChanged(false)));
       this.codeMirror.on('focus', () => this._ngZone.run(() => this.focusChanged(true)));
-      this.codeMirror.on('change', (cm: Editor, change: EditorChangeLinkedList) =>
+      this.codeMirror.on('change', (cm: Editor, change: EditorChange) =>
         this._ngZone.run(() => this.codemirrorValueChanged(cm, change))
       );
       this.codeMirror.setValue(this.value);
@@ -113,7 +113,7 @@ export class CodeEditorComponent implements AfterViewInit, OnDestroy, ControlVal
       this.codeMirror.toTextArea();
     }
   }
-  codemirrorValueChanged(cm: Editor, change: EditorChangeLinkedList) {
+  codemirrorValueChanged(cm: Editor, change: EditorChange) {
     if (change.origin !== 'setValue') {
       this.value = cm.getValue();
       this.onChange(this.value);

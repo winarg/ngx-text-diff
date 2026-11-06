@@ -8,7 +8,8 @@ import {
   EventEmitter,
   ViewChildren,
   QueryList,
-  AfterViewInit
+  AfterViewInit,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { DiffContent, DiffPart, DiffTableFormat, DiffTableFormatOption, DiffTableRowResult, DiffResults } from './ngx-text-diff.model';
 import { NgxTextDiffService } from './ngx-text-diff.service';
@@ -17,10 +18,11 @@ import { ContainerDirective } from './ngx-text-diff-container.directive';
 import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/scrolling';
 
 @Component({
-    selector: 'td-ngx-text-diff',
-    templateUrl: './ngx-text-diff.component.html',
-    styleUrls: ['./ngx-text-diff.component.css'],
-    standalone: false
+  selector: 'td-ngx-text-diff',
+  templateUrl: './ngx-text-diff.component.html',
+  styleUrls: ['./ngx-text-diff.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
   private _hideMatchingLines = false;
@@ -72,7 +74,11 @@ export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
     },
   ];
 
-  constructor(private scrollService: ScrollDispatcher, private diff: NgxTextDiffService, private cd: ChangeDetectorRef) {}
+  constructor(
+    private scrollService: ScrollDispatcher,
+    private diff: NgxTextDiffService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.loading = true;
@@ -192,17 +198,19 @@ export class NgxTextDiffComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private initScrollListener() {
-    this.subscriptions.push(this.scrollService.scrolled().subscribe((scrollableEv: CdkScrollable) => {
-      if (scrollableEv && this.synchronizeScrolling) {
-        const scrollableId = scrollableEv.getElementRef().nativeElement.id;
-        const nonScrolledContainer: ContainerDirective = this.containers.find(container => container.id !== scrollableId);
-        if (nonScrolledContainer) {
-          nonScrolledContainer.element.scrollTo({
-            top: scrollableEv.measureScrollOffset('top'),
-            left: scrollableEv.measureScrollOffset('left'),
-          });
+    this.subscriptions.push(
+      this.scrollService.scrolled().subscribe((scrollableEv: CdkScrollable) => {
+        if (scrollableEv && this.synchronizeScrolling) {
+          const scrollableId = scrollableEv.getElementRef().nativeElement.id;
+          const nonScrolledContainer: ContainerDirective = this.containers.find(container => container.id !== scrollableId);
+          if (nonScrolledContainer) {
+            nonScrolledContainer.element.scrollTo({
+              top: scrollableEv.measureScrollOffset('top'),
+              left: scrollableEv.measureScrollOffset('left'),
+            });
+          }
         }
-      }
-    }));
+      })
+    );
   }
 }

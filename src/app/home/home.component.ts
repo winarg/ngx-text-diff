@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { DiffResults } from '../../../projects/ngx-text-diff/src/lib/ngx-text-diff.model';
 
@@ -8,21 +8,22 @@ export interface DiffContent {
 }
 
 @Component({
-    selector: 'tda-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    standalone: false
+  selector: 'tda-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false,
 })
 export class HomeComponent implements OnInit {
   submitted = false;
   content: DiffContent = {
     leftContent: '',
-    rightContent: ''
+    rightContent: '',
   };
 
   options: any = {
     lineNumbers: true,
-    mode: 'xml'
+    mode: 'xml',
   };
 
   contentObservable: Subject<DiffContent> = new Subject<DiffContent>();

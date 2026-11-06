@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -9,19 +8,19 @@
     "moduleResolution": "bundler",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "downlevelIteration": true,
     "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
     "paths": {
       "ngx-text-diff": [
-        "dist/ngx-text-diff"
+        "./dist/ngx-text-diff"
       ],
       "ngx-text-diff/*": [
-        "dist/ngx-text-diff/*"
+        "./dist/ngx-text-diff/*"
       ]
     },
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "strict": false
   }
 }
